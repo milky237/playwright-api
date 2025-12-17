@@ -3,6 +3,8 @@
 ## Project Overview
 This is a Playwright-based API testing framework designed for testing REST APIs with features including custom matchers, schema validation and authentication handling.
 
+## Demo website used: https://conduit.bondaracademy.com/
+
 ## Key Technologies & Dependencies
 - **Playwright Test**: Main testing framework (`@playwright/test`)
 - **TypeScript**: Primary language
