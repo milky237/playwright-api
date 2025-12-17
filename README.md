@@ -1,4 +1,4 @@
-# Copilot Instructions for Playwright API Testing Framework
+# Instructions for Playwright API Testing Framework
 
 ## Project Overview
 This is a Playwright-based API testing framework designed for testing REST APIs with features including custom matchers, schema validation and authentication handling.
@@ -21,7 +21,7 @@ This is a Playwright-based API testing framework designed for testing REST APIs 
 │   └── [endpoint]/         # Organized by API endpoint
 ├── response-schemas/       # JSON schemas for API response validation
 │   └── [endpoint]/         # Organized by API endpoint
-├── tests/                  # Tests folder
+├── tests/api-tests         # Tests folder
 │   └── *.spec.ts           # Test files
 └── utils/                  # Core utilities
     ├── custom-expect.ts    # Custom Playwright matchers
