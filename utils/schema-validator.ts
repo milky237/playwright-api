@@ -39,9 +39,25 @@ async function loadSchema(schemaPath: string) {
 
 }
 
+function addDateTimeFormat(schema: any): void {
+    if (typeof schema !== 'object' || schema === null) return;
+    if (schema.type === 'object' && schema.properties) {
+        for (const key in schema.properties) {
+            if ((key === 'createdAt' || key === 'updatedAt') && schema.properties[key].type === 'string') {
+                schema.properties[key].format = 'date-time';
+            }
+            addDateTimeFormat(schema.properties[key]);
+        }
+    }
+    if (schema.type === 'array' && schema.items) {
+        addDateTimeFormat(schema.items);
+    }
+}
+
 async function generateNewSchema(responseBody: object, schemaPath: string) {
     try {
         const generatedSchema = createSchema(responseBody)
+        addDateTimeFormat(generatedSchema)
         await fs.mkdir(path.dirname(schemaPath), { recursive: true })
         await fs.writeFile(schemaPath, JSON.stringify(generatedSchema, null, 4))
     } catch (error: any) {
