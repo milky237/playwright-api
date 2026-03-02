@@ -90,7 +90,7 @@ test('Test Description', async ({ api }) => {
 - Schema files are generated automatically
 - Schemas stored in `response-schemas` folder
 - `shouldMatchSchema(dirName, fileName)` is a method for schema validation
-- To generate or update schema from responses set third artument `createSchemaFlag: true`. Example: `await expect(response).shouldMatchSchema('articles', 'GET_articles', true)`
+- To generate or update schema from responses set third argument `createSchemaFlag: true`. Example: `await expect(response).shouldMatchSchema('articles', 'GET_articles', true)`
 
 ## Common Development Patterns
 
